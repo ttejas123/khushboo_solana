@@ -12,7 +12,7 @@ import { WalletModalProvider} from "@solana/wallet-adapter-react-ui"
 import { SOLANA_HOST, NETWORK } from './utils/const';
 
 //This are type of wallets we have (phantom, solpewallet, solletExtention)
-import { getPhantomWallet, getSlopeWallet,getSolletExtensionWallet } from "@solana/wallet-adapter-wallets"
+import { getPhantomWallet, getSlopeWallet,getSolletExtensionWallet, getBitpieWallet } from "@solana/wallet-adapter-wallets"
 
 //after first try use this file to understand connection realeted to wallet 
 import Startup from './startup'
@@ -28,6 +28,7 @@ function App() {
   const wallets = useMemo(
     () => [
       getPhantomWallet(),
+      getBitpieWallet(),
       getSlopeWallet(),
       getSolletExtensionWallet({ NETWORK }),
     ],

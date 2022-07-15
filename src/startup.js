@@ -1,12 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useWallet } from "@solana/wallet-adapter-react"
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui"
 import ConnectWalletPage from './pages/ConnectWallet.js'
+import AfterContion from './walletCon'
 function Alloutes() {
   const {connected} = useWallet();
   return (
         <div>
-            {connected ? (<>Hello Your Wllet is Connected</>) : (<WalletMultiButton />)}
+            {connected ? (<AfterContion />) : (<ConnectWalletPage />)}
         </div>
   );
 }
